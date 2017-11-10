@@ -13,7 +13,7 @@ main_path = PhotoScan.app.getExistingDirectory("Specify the folder with the CSV 
 
 WIDTH = 640 #640
 HEIGHT = 480 #512
-DELIMITER = "," #","
+DELIMITER = ";" #","
 ABS_MAX = 65535
 ABS_MIN = 0
 
