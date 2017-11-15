@@ -37,6 +37,8 @@ for file in files:
 		max_t = max(max(pixels), max_t)
 		min_t = min(min(pixels), min_t)
 	file_csv.close()
+ 
+print("Maximum temperature is: " + str(max_t) + " and the Miniumum temperature is: " + str(min_t))
 
 #creating images	
 for file in files:
