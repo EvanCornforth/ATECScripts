@@ -1,0 +1,19 @@
+cd "%~dp0"
+
+@echo off
+echo Directory of .ARW files to be converted to .TIFF files is: %1
+
+REM %f being a variable, will loop through all the .arw images in this directory
+for %%f in (%1*.arw) do (
+			REM  -v Development showing the progress information on screen
+			REM -w We use the white balance that was configured in the camera
+			REM -H 1 We use a linear mode with no clipping in the highlights
+			REM -o 1 We convert the resulting image to the sRGB colour space
+			REM -q 3 We set the maximum possible quality of interpolation
+			REM -q 0 is the bilinear interpolation, whereby the red value of a non-red pixel 
+			REM is computed as the average of the two or four adjacent red pixels, and similarly for blue and green.
+			REM -4 -T We force 16-bit TIFF linear output
+			
+			REM ~n expands %f to a file name only
+			C:\Users\Evan\Desktop\dcraw-9.27-ms-64-bit\dcraw-9.27-ms-64-bit.exe -v -w -H 1 -o 1 -q 3 -4 -T %1%%~nf.arw
+    )
