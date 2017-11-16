@@ -9,4 +9,5 @@ import os
 
 path = 'C:/Users/Evan/Documents/PhD/DCIM/testDCRAW/'
 
-os.system('C:\\Users\\Evan\\Documents\\PhD\\ATEC_Jupyter\\Convert_Dir_ARWTIFF.bat ' + path)
+#os.system('C:\\Users\\Evan\\Documents\\PhD\\ATEC_Jupyter\\Convert_Dir_ARWTIFF.bat ' + path)
+os.system('C:\\Users\\Evan\\Documents\\PhD\\ATEC_Jupyter\\mybatch.bat ' + path)
