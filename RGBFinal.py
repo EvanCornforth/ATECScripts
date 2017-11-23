@@ -250,6 +250,8 @@ for flight in range(csvCounter):
             for i in range(len(jpgImageNames)):
                 os.rename(jpgImageNames[i],  newpath1 + jpgImageFileNames[i])
                 os.rename(arwImageNames[i],  newpath3 + arwImageFileNames[i])
+                if i%5 == 0:
+                    print("Moved ARW and JPG %d out of %d to their MissionData folder" % (i, len(jpgImageNames)))
     
     flightImageSummary.append(missionImagesMoved)
     print("Moved JPG and ARW images that were in this flight and on the mission to their corresponding mission data folder")
@@ -269,7 +271,9 @@ for flight in range(csvCounter):
             notmissionImagesMoved = len(jpgImageNames)
             for i in range(len(jpgImageNames)):
                 os.rename(jpgImageNames[i],  newpath2 + jpgImageFileNames[i])
-                os.rename(arwImageNames[i],  newpath4 + arwImageFileNames[i]) 
+                os.rename(arwImageNames[i],  newpath4 + arwImageFileNames[i])
+                if i%5 == 0:
+                    print("Moved ARW and JPG %d out of %d to their NotMissionData folder" % (i, len(jpgImageNames)))
     
     flightImageSummary.append(notmissionImagesMoved)        
     print("Moved JPG and ARW images that were in this flight but not on the mission to their corresponding not mission data folder")
