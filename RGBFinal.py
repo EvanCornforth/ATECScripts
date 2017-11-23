@@ -278,12 +278,11 @@ for flight in range(csvCounter):
 #flight, useful for when there images taken during a flight but no images
 #taken on mission        
 with open(directory+'FinalFlightSummary.txt', 'w') as flightSummary:
-     firstRow = "Flight Number" + "\t" + "In Mission ARW/JPG" + "\t" + "Not In Mission ARW/JPG" + "\n"
-     flightSummary.write(firstRow)
      for i in range(csvCounter):
-         row = str(i+1) + "\t" + str(flightImageSummary[i*2]) + "\t" + str(flightImageSummary[i*2+1]) + "\n"
+         row = "Flight Number" + "\t" + str(i+1) + "\t" + "In Mission ARW/JPG" + "\t" + str(flightImageSummary[i*2]) + "\t" + "Not In Mission ARW/JPG" + "\t" + str(flightImageSummary[i*2+1]) + "\n"
          flightSummary.write(row)
     
 print("Written summary of the day's flights at location:", directory+'FinalFlightSummary.txt')
-   
+
+print('\a')
 print("All done :)")
