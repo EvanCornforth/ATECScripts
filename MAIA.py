@@ -165,7 +165,7 @@ for i in range(fileCounter):
         with open(outputFileName, 'w') as outputMaiaFile:
             firstRow = str(newFileImageNames[0]) + "," + str(fileLongs[0]) + "," + str(fileLats[0]) + "," + str(fileAltitudes[0]) + "\n"
             outputMaiaFile.write(firstRow)
-            for d in range(missStartLine, missEndLine):
+            for d in range(missStartLine, missEndLine + 1):
                 row = newFileImageNames[d] + "," + '-' + fileLongs[d] + "," + fileLats[d] + "," + fileAltitudes[d] + "\n"
                 outputMaiaFile.write(row)
 
