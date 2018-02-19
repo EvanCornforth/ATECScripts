@@ -7,11 +7,14 @@ Created on Tue Nov 28 09:35:25 2017
 """
 
 import os
+from tkinter.filedialog import askdirectory
 
-imageDirectoryInput = input('Enter the image directory: ')
-imageDirectory = imageDirectoryInput.replace("\\", "/")
-maiaLogPathInput = input('Enter the MAIA log path: ')
-maiaLogPath = maiaLogPathInput.replace("\\", "/")
+#imageDirectoryInput = input('Enter the image directory: ')
+#imageDirectory = imageDirectoryInput.replace("\\", "/")
+imageDirectory = askdirectory()
+#maiaLogPathInput = input('Enter the MAIA log path: ')
+#maiaLogPath = maiaLogPathInput.replace("\\", "/")
+maiaLogPath = askdirectory()
 
 #missionSpeed = [3.9, 3.9, 2.0, 4.0, 2.0]
 #missionSpeedBumpiness = [0.5, 0.3, 0.5, 0.5, 0.5]

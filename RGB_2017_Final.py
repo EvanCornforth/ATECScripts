@@ -109,7 +109,7 @@ for flight in range(csvCounter):
     
     for y in range(potMatch):
         if potMatchLines[y].find(dateWord):
-            times.append(potMatchLines[y][(potMatchLines[y].find(dateWord)+16):((potMatchLines[y].find(dateWord)+22))])
+            times.append(potMatchLines[y][(potMatchLines[y].find(dateWord)+16):((potMatchLines[y].find(dateWord)+24))])
             flightTimes.append((flightFileLines[camShotLine[y]]).split(',')[1])
     
     #offsetTime from the flight file for mission start and end
@@ -121,11 +121,9 @@ for flight in range(csvCounter):
     #This calculates the real time for mission start and end, in format HH:MM:SS
     realFlightTimes = [0,0]
     for j in range(2):
-        #timeHolder = (times[0]).split(':')
-        timeHolder = [0, 0, 0]
-        theTime = times[0]
+        timeHolder = (times[0]).split(':')
         for i in range(3):
-            timeHolder[i] = float(theTime[i*2:i*2+2])
+            timeHolder[i] = float(timeHolder[i])
         timeHolder[2] = timeHolder[2] + flightTimeDiffs[j]
         while timeHolder[2] >= 60:
             timeHolder[2] = timeHolder[2] - 60
