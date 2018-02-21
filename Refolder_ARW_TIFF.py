@@ -28,7 +28,7 @@ tiffFileHolder = []
 tiffPathHolder = []
 tiffCounter = 0   
 for file in os.listdir(main_path):
-    if file[-3:].lower() == "jpg":
+    if file[-4:].lower() == "tiff":
         tiffPathHolder.append(os.path.join(main_path, file))
         tiffFileHolder.append(file)
         tiffCounter = tiffCounter + 1
