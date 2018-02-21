@@ -1,15 +1,16 @@
 # -*- coding: utf-8 -*-
 """
 Created on Mon Feb 19 12:20:55 2018
-
 @author: evanc
 """
 
 import os
+from tkinter.filedialog import askdirectory
 
-main_path = r'C:\Users\evanc\Documents\PhD\OM_TestGround\OM_F1_2018\sony_rgb\20171220\Flight1MissionData\arw'
+print("Please select the directory containing .Tiffs and .ARW images")
+main_path = askdirectory()
 
-pathBits = main_path.split('\\')
+pathBits = main_path.split('/')
 
 if len(pathBits[-1]) == 0:
     main_path = main_path[:-2]
@@ -27,7 +28,7 @@ tiffFileHolder = []
 tiffPathHolder = []
 tiffCounter = 0   
 for file in os.listdir(main_path):
-    if file[-4:].lower() == "tiff":
+    if file[-3:].lower() == "jpg":
         tiffPathHolder.append(os.path.join(main_path, file))
         tiffFileHolder.append(file)
         tiffCounter = tiffCounter + 1
